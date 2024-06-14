@@ -22,7 +22,14 @@ export default function CreateNotification() {
     try {
       const response = await axios.post(`${BASE_BACKEND_URL}/send`, {
         data: { title: notifData.title, body: notifData.body },
-      });
+      }, 
+
+      {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+                                       );
       if (response.status === 200) {
         toast.success("Notification Success");
       }
