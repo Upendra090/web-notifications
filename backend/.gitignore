@@ -1,0 +1,4 @@
+node_modules
+# Keep environment variables out of version control
+.env
+notifications-464dd-firebase-adminsdk-n07pk-fae0744f59.json
