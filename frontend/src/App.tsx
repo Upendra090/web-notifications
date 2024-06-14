@@ -51,7 +51,13 @@ export default function App() {
     try {
       const response = await axios.post(`${backendUrl}/store-tokens`, {
         data: { gsmToken: token },
-      });
+      }, 
+      {
+          headers: {
+            "Content-Type": "application/json",
+          },
+      }                                 
+      );
       console.log("Token stored:", response);
       toast.success("Token stored successfully");
     } catch (err) {
